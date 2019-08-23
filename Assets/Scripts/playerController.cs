@@ -22,8 +22,8 @@ public class playerController : MonoBehaviour
     void Update()
     {
         change = Vector3.zero;
-        change.x = Input.GetAxisRaw("Horizontal");
-        change.y = Input.GetAxisRaw("Vertical");
+        change.x = SimpleInput.GetAxisRaw("Horizontal");
+        change.y = SimpleInput.GetAxisRaw("Vertical");
         UpdateAnimationAndMove();
     }
 
