@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class playerController : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator playerAnimator;
+    public TextMeshProUGUI test;
 
 
     void Start()
@@ -17,6 +19,7 @@ public class playerController : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator.SetFloat("moveX", 0);
         playerAnimator.SetFloat("moveY", -1);
+        test = FindObjectOfType<TextMeshProUGUI>();
     }
 
     void Update()
@@ -25,6 +28,16 @@ public class playerController : MonoBehaviour
         change.x = SimpleInput.GetAxisRaw("Horizontal");
         change.y = SimpleInput.GetAxisRaw("Vertical");
         UpdateAnimationAndMove();
+        if (SimpleInput.GetButtonDown("A button"))
+        {
+            test.text = "it's working A";
+        }
+        else if(SimpleInput.GetButtonDown("B button"))
+        {
+
+            test.text = "it's working B";
+        }
+
     }
 
     void UpdateAnimationAndMove()
