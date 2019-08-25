@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using UnityEngine.UI;//required for using ui stuff duh.
+using TMPro; //required for using textmeshpro.
 public class playerController : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator playerAnimator;
-    public TextMeshProUGUI test;
-
+    private TextMeshProUGUI test; //just for testing purposes will remove
 
     void Start()
     {
@@ -18,8 +17,8 @@ public class playerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator.SetFloat("moveX", 0);
-        playerAnimator.SetFloat("moveY", -1);
-        test = FindObjectOfType<TextMeshProUGUI>();
+        playerAnimator.SetFloat("moveY", -1);//sets it to -1 so it doesnt't assume any states
+        test = FindObjectOfType<TextMeshProUGUI>(); 
     }
 
     void Update()
@@ -30,7 +29,7 @@ public class playerController : MonoBehaviour
         UpdateAnimationAndMove();
         if (SimpleInput.GetButtonDown("A button"))
         {
-            test.text = "it's working A";
+            test.text = "it's working A";//test button log
         }
         else if(SimpleInput.GetButtonDown("B button"))
         {
