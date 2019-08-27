@@ -7,8 +7,8 @@ public class SheetAssigner : MonoBehaviour {
 	Texture2D[] sheetsNormal;
 	[SerializeField]
 	GameObject RoomObj;
-	public Vector2 roomDimensions = new Vector2(16*17,16*9);
-	public Vector2 gutterSize = new Vector2(16*9,16*4);
+	public Vector2 roomDimensions = new Vector2(15,9);
+	public Vector2 gutterSize = new Vector2(0,0);
 	public void Assign(Room[,] rooms){
 		foreach (Room room in rooms){
 			//skip point where there is no room

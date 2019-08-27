@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour {
-	public Vector2 worldSize = new Vector2(4,4); //the size of the world size. change this to !public later
+	Vector2 worldSize = new Vector2(4,4);
 	Room[,] rooms;
 	List<Vector2> takenPositions = new List<Vector2>();
-	public int gridSizeX, gridSizeY, numberOfRooms = 20;//this too change to !public
-    public GameObject roomWhiteObj;
-	public Transform mapRoot;
+    int gridSizeX, gridSizeY;
+    public int numberOfRooms = 1;
 	void Start () {
 		if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2)){ // make sure we dont try to make more rooms than can fit in our grid
 			numberOfRooms = Mathf.RoundToInt((worldSize.x * 2) * (worldSize.y * 2));
@@ -17,7 +16,6 @@ public class LevelGeneration : MonoBehaviour {
 		gridSizeY = Mathf.RoundToInt(worldSize.y);
 		CreateRooms(); //lays out the actual map
 		SetRoomDoors(); //assigns the doors where rooms would connect
-		DrawMap(); //instantiates objects to make up a map
 		GetComponent<SheetAssigner>().Assign(rooms); //passes room info to another script which handles generatating the level geometry
 	}
 	void CreateRooms(){
@@ -127,24 +125,7 @@ public class LevelGeneration : MonoBehaviour {
 		}
 		return ret;
 	}
-	void DrawMap(){
-		foreach (Room room in rooms){
-			if (room == null){
-				continue; //skip where there is no room
-			}
-			Vector2 drawPos = room.gridPos;
-			drawPos.x *= 16;//aspect ratio of map sprite
-			drawPos.y *= 8;
-			//create map obj and assign its variables
-			MapSpriteSelector mapper = Object.Instantiate(roomWhiteObj, drawPos, Quaternion.identity).GetComponent<MapSpriteSelector>();
-			mapper.type = room.type;
-			mapper.up = room.doorTop;
-			mapper.down = room.doorBot;
-			mapper.right = room.doorRight;
-			mapper.left = room.doorLeft;
-			mapper.gameObject.transform.parent = mapRoot;
-		}
-	}
+	
 	void SetRoomDoors(){
 		for (int x = 0; x < ((gridSizeX * 2)); x++){
 			for (int y = 0; y < ((gridSizeY * 2)); y++){

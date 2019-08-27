@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6298759526474424392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6298759526474424394}
+  - component: {fileID: 6298759526474424395}
+  m_Layer: 0
+  m_Name: RoomRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6298759526474424394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6298759526474424392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6298759526474424395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6298759526474424392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec9f4b3db5e8b14fb36451c0c33aab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tex: {fileID: 0}
+  gridPos: {x: 0, y: 0}
+  type: 0
+  doorTop: 0
+  doorBot: 0
+  doorLeft: 0
+  doorRight: 0
+  doorU: {fileID: 7617466218428214820, guid: 51238f3bdbab2334c8e425de2f9e056c, type: 3}
+  doorD: {fileID: 7617466218428214820, guid: 51238f3bdbab2334c8e425de2f9e056c, type: 3}
+  doorL: {fileID: 7617466218428214820, guid: 51238f3bdbab2334c8e425de2f9e056c, type: 3}
+  doorR: {fileID: 7617466218428214820, guid: 51238f3bdbab2334c8e425de2f9e056c, type: 3}
+  doorWall: {fileID: 5034244076100947173, guid: f1ebcb32ca9a3a0449218e98a2294c25,
+    type: 3}
+  mappings:
+  - color: {r: 0, g: 0.89411765, b: 0.21176471, a: 1}
+    prefab: {fileID: 7838392575533808939, guid: 0e927db17aedfba40bcd9f391072a332,
+      type: 3}
+  - color: {r: 0.16078432, g: 0.6784314, b: 1, a: 1}
+    prefab: {fileID: 7559723655997789868, guid: f63e9d092bfa0bf4ebabad17e54b44f8,
+      type: 3}
+  - color: {r: 0.49411765, g: 0.14509805, b: 0.3254902, a: 1}
+    prefab: {fileID: 3016335136043101211, guid: 7321f5c71e81ed04a977656895c249f0,
+      type: 3}
+  - color: {r: 0.11372549, g: 0.16862746, b: 0.3254902, a: 1}
+    prefab: {fileID: 5034244076100947173, guid: f1ebcb32ca9a3a0449218e98a2294c25,
+      type: 3}
