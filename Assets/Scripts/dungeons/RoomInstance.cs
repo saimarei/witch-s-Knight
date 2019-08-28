@@ -66,14 +66,17 @@ public class RoomInstance : MonoBehaviour {
 		}
 		//find the color to math the pixel
 		foreach (ColorToGameObject mapping in mappings){
-			if (mapping.color.Equals(pixelColor))
+            Vector4 map = new Vector4(Mathf.RoundToInt(mapping.color.a), Mathf.RoundToInt(mapping.color.r*1000), Mathf.RoundToInt(mapping.color.g * 1000), Mathf.RoundToInt(mapping.color.b * 1000));
+            Vector4 pixel = new Vector4(Mathf.RoundToInt(pixelColor.a), Mathf.RoundToInt(pixelColor.r*1000), Mathf.RoundToInt(pixelColor.g * 1000), Mathf.RoundToInt(pixelColor.b * 1000));
+            if (map == pixel)
             {
 				Vector3 spawnPos = positionFromTileGrid(x,y);
 				Instantiate(mapping.prefab, spawnPos, Quaternion.identity).transform.parent = this.transform;
 			}
 		}
 	}
-	Vector3 positionFromTileGrid(int x, int y){
+	public Vector3 positionFromTileGrid(int x, int y)
+    {
 		Vector3 ret;
 		//find difference between the corner of the texture and the center of this object
 		Vector3 offset = new Vector3((-roomSizeInTiles.x + 8)*tileSize, (roomSizeInTiles.y/4)*tileSize - (tileSize/4)+2, 0);

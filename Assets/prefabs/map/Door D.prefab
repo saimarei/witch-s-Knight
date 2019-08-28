@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 7617466218428214823}
   - component: {fileID: 7617466218428214822}
   - component: {fileID: 7617466218428214821}
-  - component: {fileID: 2145226154024863613}
   - component: {fileID: 1146239016533119797}
   m_Layer: 0
-  m_Name: Door
+  m_Name: Door D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2993900771664221379, guid: a140b4d9a792e6d428e045207f5db31d,
+  m_Sprite: {fileID: 7680150440436671522, guid: a140b4d9a792e6d428e045207f5db31d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.27}
+  m_Offset: {x: 0, y: 0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -108,33 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.45}
-  m_EdgeRadius: 0
---- !u!61 &2145226154024863613
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7617466218428214820}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6, y: 0.35}
   m_EdgeRadius: 0
 --- !u!114 &1146239016533119797
 MonoBehaviour:
@@ -148,3 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6533d3a9a7bde4ea67d9c571514e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeX: 0
+  changeY: -10
+  playerChangeX: 0
+  playerChangeY: -3.5

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RoomTransfer : MonoBehaviour
 {
-    public Vector2 cameraChange;
-    public Vector2 playerChange;
+    
+    public float changeX,changeY;
+    public float playerChangeX, playerChangeY;
     private CameraController cam;
     // Start is called before the first frame update
     void Start()
@@ -20,9 +21,11 @@ public class RoomTransfer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("player"))
+        if (other.CompareTag("Player"))
         {
-
+            cam.offset = new Vector3(changeX,changeY,0);
+            cam.Roomchange();
+            other.transform.position += new Vector3(playerChangeX, playerChangeY, 0);
         }
     }
 }
