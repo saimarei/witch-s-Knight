@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour {
-	Vector2 worldSize = new Vector2(4,4);
+    #region variable declaration
+    Vector2 worldSize = new Vector2(4,4);
 	Room[,] rooms;
 	List<Vector2> takenPositions = new List<Vector2>();
     int gridSizeX, gridSizeY;
     public int numberOfRooms = 1;
-	void Start () {
+    #endregion
+    void Start ()
+    {
 		if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2)){ // make sure we dont try to make more rooms than can fit in our grid
 			numberOfRooms = Mathf.RoundToInt((worldSize.x * 2) * (worldSize.y * 2));
 		}
@@ -18,7 +21,8 @@ public class LevelGeneration : MonoBehaviour {
 		SetRoomDoors(); //assigns the doors where rooms would connect
 		GetComponent<SheetAssigner>().Assign(rooms); //passes room info to another script which handles generatating the level geometry
 	}
-	void CreateRooms(){
+
+    void CreateRooms(){
 		//setup
 		rooms = new Room[gridSizeX * 2,gridSizeY * 2];
 		rooms[gridSizeX,gridSizeY] = new Room(Vector2.zero, 1);

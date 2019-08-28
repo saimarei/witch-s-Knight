@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class RoomTransfer : MonoBehaviour
 {
- 
+    public Vector2 cameraChange;
+    public Vector2 playerChange;
+    private CameraController cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +17,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("player"))
+        {
+
+        }
     }
 }

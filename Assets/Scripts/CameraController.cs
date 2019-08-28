@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
- 
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main.GetComponent<CameraController>();
+        
     }
 
     // Update is called once per frame

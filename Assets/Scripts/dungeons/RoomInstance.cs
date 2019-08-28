@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomInstance : MonoBehaviour {
-	public Texture2D tex;
+    #region variable declaration
+    public Texture2D tex;
 	[HideInInspector]
 	public Vector2 gridPos;
 	public int type; // 0: normal, 1: enter
@@ -15,7 +16,8 @@ public class RoomInstance : MonoBehaviour {
 	ColorToGameObject[] mappings;
 	float tileSize = 1;
 	Vector2 roomSizeInTiles = new Vector2(15,9);
-	public void Setup(Texture2D _tex, Vector2 _gridPos, int _type, bool _doorTop, bool _doorBot, bool _doorLeft, bool _doorRight){
+    #endregion
+    public void Setup(Texture2D _tex, Vector2 _gridPos, int _type, bool _doorTop, bool _doorBot, bool _doorLeft, bool _doorRight){
 		tex = _tex;
 		gridPos = _gridPos;
 		type = _type;

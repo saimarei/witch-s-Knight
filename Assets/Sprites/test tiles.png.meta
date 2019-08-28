@@ -59,7 +59,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -114,9 +114,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 10
-        width: 136
-        height: 136
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,7 +124,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58df650b6fdc7654b97fe45c02d253c7
+      spriteID: 72f913ecef5c9b24980fef6f87f54301
       internalID: -2993900771664221379
       vertices: []
       indices: 
@@ -134,10 +134,10 @@ TextureImporter:
       name: test tiles_1
       rect:
         serializedVersion: 2
-        x: 192
-        y: 10
-        width: 136
-        height: 136
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77d6e5d0848ef7447802d65ea5db475c
+      spriteID: 1df3c908d1a9ef44d9c294130d9852d3
       internalID: -8242280653173795229
       vertices: []
       indices: 
@@ -155,10 +155,10 @@ TextureImporter:
       name: test tiles_2
       rect:
         serializedVersion: 2
-        x: 384
-        y: 10
-        width: 136
-        height: 136
+        x: 256
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,7 +166,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c711736ef5ee5af419115f7c3372d032
+      spriteID: 8afa30e554753034f8969a3a958d6fa0
       internalID: -6794933166906336193
       vertices: []
       indices: 
@@ -176,10 +176,10 @@ TextureImporter:
       name: test tiles_3
       rect:
         serializedVersion: 2
-        x: 582
+        x: 384
         y: 0
-        width: 144
-        height: 155
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,7 +187,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2a0451de63729f4f8fc429cb13ddb09
+      spriteID: 8239f0f15b782bb46bfb58ebc2db0619
       internalID: 6461785225846937487
       vertices: []
       indices: 
@@ -203,7 +203,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+  spritePackingTag: map tiles
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
   userData: 
