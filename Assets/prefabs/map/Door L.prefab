@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6533d3a9a7bde4ea67d9c571514e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeX: -17
+  changeX: -18
   changeY: 0
-  playerChangeX: -4.4
+  playerChangeX: -5.4
   playerChangeY: 0

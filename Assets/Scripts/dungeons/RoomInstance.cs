@@ -11,7 +11,7 @@ public class RoomInstance : MonoBehaviour {
 	[HideInInspector]
 	public bool doorTop, doorBot, doorLeft, doorRight;
 	[SerializeField]
-	GameObject doorU, doorD, doorL, doorR, doorWall;
+	GameObject doorU, doorD, doorL, doorR, doorWallU, doorWallD, doorWallL, doorWallR;
 	[SerializeField]
 	ColorToGameObject[] mappings;
 	float tileSize = 1;
@@ -31,23 +31,23 @@ public class RoomInstance : MonoBehaviour {
 	void MakeDoors(){
 		//top door, get position then spawn
 		Vector3 spawnPos = transform.position + Vector3.up*(roomSizeInTiles.y/4) - Vector3.up*((tileSize/4)-2) - Vector3.left*(tileSize-1);
-		PlaceDoor(spawnPos, doorTop, doorU);
+		PlaceDoor(spawnPos, doorTop, doorU,doorWallU);
 		//bottom door
 		spawnPos = transform.position + Vector3.down*(roomSizeInTiles.y/4) - Vector3.down*((tileSize/4-2)) -Vector3.left*(tileSize-1);
-		PlaceDoor(spawnPos, doorBot, doorD);
+		PlaceDoor(spawnPos, doorBot, doorD,doorWallD);
 		//right door
 		spawnPos = transform.position + Vector3.right*(roomSizeInTiles.x-8) - Vector3.up*(tileSize-1);
-		PlaceDoor(spawnPos, doorRight, doorR);
+		PlaceDoor(spawnPos, doorRight, doorR,doorWallR);
 		//left door
 		spawnPos = transform.position + Vector3.left*(roomSizeInTiles.x-8)- Vector3.up*(tileSize-1);
-		PlaceDoor(spawnPos, doorLeft, doorL);
+		PlaceDoor(spawnPos, doorLeft, doorL,doorWallL);
 	}
-	void PlaceDoor(Vector3 spawnPos, bool door, GameObject doorSpawn){
+	void PlaceDoor(Vector3 spawnPos, bool door, GameObject doorSpawn, GameObject doorWallSpawn){
 		// check whether its a door or wall, then spawn
 		if (door){
 			Instantiate(doorSpawn, spawnPos, Quaternion.identity).transform.parent = transform;
 		}else{
-			Instantiate(doorWall, spawnPos, Quaternion.identity).transform.parent = transform;
+			Instantiate(doorWallSpawn, spawnPos, Quaternion.identity).transform.parent = transform;
 		}
 	}
 	void GenerateRoomTiles(){

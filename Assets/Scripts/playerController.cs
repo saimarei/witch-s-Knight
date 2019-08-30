@@ -10,6 +10,10 @@ public class playerController : MonoBehaviour
     private Vector3 change;
     private Animator playerAnimator;
     private TextMeshProUGUI test; //just for testing purposes will remove
+    public float dashSpeed;
+    public float dashTime;
+    public float dashStopTime;
+    private float currentTime;
 
     void Start()
     {
@@ -60,5 +64,10 @@ public class playerController : MonoBehaviour
     {
         change.Normalize();
         myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime);
+    }
+
+    void Dash()
+    {
+
     }
 }
