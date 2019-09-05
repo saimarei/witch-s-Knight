@@ -144,6 +144,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  top: {fileID: 7974593991789867343, guid: ac407e53692e6f045a7e0e8740b3a3dc, type: 3}
+  bottom: {fileID: 7674690967972429312, guid: 4e9adefd91231ce4d8fe3b496aa36efc, type: 3}
+  left: {fileID: 5563394981669040681, guid: c4a1f6fd3ad76ed4eb2477bb9018b331, type: 3}
+  right: {fileID: 7369786288511322722, guid: 8e29fe9d10cd3034596087e20c375ab2, type: 3}
 --- !u!95 &6908747573009850453
 Animator:
   serializedVersion: 3
