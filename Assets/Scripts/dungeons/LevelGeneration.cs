@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random; 		//Tells Random to use the Unity Engine random number generator.
+
 
 public class LevelGeneration : MonoBehaviour {
     #region variable declaration
@@ -9,7 +11,13 @@ public class LevelGeneration : MonoBehaviour {
 	List<Vector2> takenPositions = new List<Vector2>();
     int gridSizeX, gridSizeY;
     public int numberOfRooms = 1;
+    /*public GameObject[] floorTiles;                                 //Array of floor prefabs.
+    public GameObject[] wallTiles;                                  //Array of wall prefabs.
+    public GameObject[] itemsTiles;                                  //Array of items prefabs.
+    public GameObject[] enemyTiles;*/									//Array of enemy prefabs.
     #endregion
+
+
     void Start ()
     {
 		if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2)){ // make sure we dont try to make more rooms than can fit in our grid
