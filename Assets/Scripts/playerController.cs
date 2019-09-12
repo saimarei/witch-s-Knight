@@ -13,8 +13,6 @@ public class playerController : MonoBehaviour
     private Animator playerAnimator;
     private TextMeshProUGUI test; //just for testing purposes will remove
     public float dashSpeed=10f;
-    //public float dashTime;
-    //private float startdashTime=1f;
     private int taps = 0;
     public Button top, bottom, left, right;
     private float timer=0,maxWaitTime=0.5f;
@@ -22,9 +20,12 @@ public class playerController : MonoBehaviour
     private int direction;
     private bool idleTooLong=false;
     private float idleTimer;
+    public ParticleSystem playerPS;
+
+
     void Start()
     {
-        
+        ParticleSystem playerPS = GetComponent<ParticleSystem>();
         playerAnimator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator.SetFloat("moveX", 0);
@@ -38,7 +39,7 @@ public class playerController : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
         change = Vector3.zero;
         change.x = SimpleInput.GetAxisRaw("Horizontal");
         change.y = SimpleInput.GetAxisRaw("Vertical");
@@ -81,6 +82,11 @@ public class playerController : MonoBehaviour
         }
         else
             timer = 0f;
+
+        if(playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("idle"))
+        {
+            playerPS.Play();
+        }
     }
     private void FixedUpdate()
     {
@@ -125,36 +131,34 @@ public class playerController : MonoBehaviour
 
     void Dash()
     {
-        try
+        if (dashing)
         {
-            if (dashing)
-            {
-                idleTooLong = false;
-                playerAnimator.SetBool("rolling",true);
-                if (EventSystem.current.currentSelectedGameObject.name == "Top")
-                {
-                    myRigidbody.velocity = Vector2.up * dashSpeed; ;
-                }
-                else if (EventSystem.current.currentSelectedGameObject.name == "Right")
-                {
-                    myRigidbody.velocity = Vector2.right * dashSpeed;
-                }
-                else if (EventSystem.current.currentSelectedGameObject.name == "Bottom")
-                {
-                    myRigidbody.velocity = Vector2.down * dashSpeed;
-                }
-                else if (EventSystem.current.currentSelectedGameObject.name == "Left")
-                    myRigidbody.velocity = Vector2.left * dashSpeed;
-            }
-            else if (!dashing)
-            {
-                playerAnimator.SetBool("rolling", false);
-                dashSpeed = 0f;
-            }
+           var main = playerPS.main;
+           idleTooLong = false;
+           playerAnimator.SetBool("rolling",true);
+           if (EventSystem.current.currentSelectedGameObject.name == "Top")
+           {
+               myRigidbody.velocity = Vector2.up * dashSpeed; ;
+           }
+           else if (EventSystem.current.currentSelectedGameObject.name == "Right")
+           {
+               myRigidbody.velocity = Vector2.right * dashSpeed;
+           }
+           else if (EventSystem.current.currentSelectedGameObject.name == "Bottom")
+           {
+               myRigidbody.velocity = Vector2.down * dashSpeed;
+           }
+           else if (EventSystem.current.currentSelectedGameObject.name == "Left")
+               myRigidbody.velocity = Vector2.left * dashSpeed;
+
+           main.startSize = 0.25f;
         }
-        catch (Exception e)
+        else if (!dashing)
         {
-            Debug.LogException(e, this);
+           var main = playerPS.main;
+           playerAnimator.SetBool("rolling", false);
+           dashSpeed = 0f;
+           main.startSize = 0.15f;
         }
     }
 
@@ -166,7 +170,6 @@ public class playerController : MonoBehaviour
             idleTooLong = true;
             if (idleTooLong)
             {
-
                 int blinks = 0;
                 ++blinks;
                 playerAnimator.SetBool("idle2long", true);
@@ -195,7 +198,5 @@ public class playerController : MonoBehaviour
                 }
             }
         }
-
     }
-    
 }
